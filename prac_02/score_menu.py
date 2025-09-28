@@ -45,6 +45,7 @@ def evaluate_score(score):
         return "Bad"
 
 def show_stars(score):
-
+    """Print a row of stars equal to the score value"""
+    print("*" * int(score))
 
 main()
