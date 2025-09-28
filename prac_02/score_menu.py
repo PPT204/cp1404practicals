@@ -28,14 +28,23 @@ def display_menu():
     return input(">>> ").upper()
 
 def get_valid_score():
-
+    """Prompt for a score between 0 and 100 inclusive"""
+    score = float(input("Enter score (0–100): "))
+    while score < 0 or score > 100:
+        print("Invalid score.")
+        score = float(input("Enter score (0–100): "))
+    return score
 
 def evaluate_score(score):
-
+    """Return a grade string based on the given score"""
+    if score >= 90:
+        return "Excellent"
+    elif score >= 50:
+        return "Passable"
+    else:
+        return "Bad"
 
 def show_stars(score):
-
-
 
 
 main()
