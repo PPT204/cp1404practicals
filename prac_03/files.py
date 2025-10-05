@@ -6,3 +6,8 @@ name = input("Enter your name: ")
 out_file = open("name.txt", "w")
 out_file.write(name + "\n")  # write the name on its own line
 out_file.close()
+
+in_file = open("name.txt", "r")
+stored_name = in_file.read().strip()
+in_file.close()
+print(f"Hi {stored_name}!")
