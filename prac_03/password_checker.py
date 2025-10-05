@@ -48,7 +48,9 @@ def is_valid_password(password):
             number_of_special += 1
 
 
-    # and return False if it's zero
+    # Check mandatory character types
+    if number_of_lower == 0 or number_of_upper == 0 or number_of_digit == 0:
+        return False
 
     # if we get here (without returning False), then the password must be valid
     return True
