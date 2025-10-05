@@ -16,3 +16,9 @@ with open("numbers.txt", "r") as f:
     first = int(f.readline())
     second = int(f.readline())
 print(first + second)
+
+total = 0
+with open("numbers.txt", "r") as f:
+    for line in f:
+        total += int(line.strip())
+print(total)
