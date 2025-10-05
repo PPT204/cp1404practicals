@@ -15,6 +15,9 @@ MIN_PRICE = 1.0
 MAX_PRICE = 100.0
 INITIAL_PRICE = 10.
 
+FILENAME = "stock_prices.txt"
+out_file = open(FILENAME, 'w')
+
 price = INITIAL_PRICE
 number_of_days = 0     # Add counter
 
@@ -34,3 +37,5 @@ while MIN_PRICE <= price <= MAX_PRICE:
         price_change = random.uniform(-MAX_DECREASE, 0)
     price *= (1 + price_change)
     print(f"On day {number_of_days} price is: ${price:,.2f}")
+
+out_file.close() # Close file
