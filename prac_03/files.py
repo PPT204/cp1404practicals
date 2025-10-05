@@ -11,3 +11,8 @@ in_file = open("name.txt", "r")
 stored_name = in_file.read().strip()
 in_file.close()
 print(f"Hi {stored_name}!")
+
+with open("numbers.txt", "r") as f:
+    first = int(f.readline())
+    second = int(f.readline())
+print(first + second)
