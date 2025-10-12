@@ -20,12 +20,12 @@ def get_incomes(number_of_months):
     return incomes
 
 def print_report(incomes):
+    """Print a formatted income report showing cumulative totals."""
     print("\nIncome Report\n-------------")
     total = 0
-    for month in range(1, months + 1):
-        income = incomes[month - 1]
+    for month, income in enumerate(incomes, start=1):
         total += income
-        print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month, income, total))
+        print(f"Month {month:2} - Income: ${income:10.2f} Total: ${total:10.2f}")
 
 
 main()
