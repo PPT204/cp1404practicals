@@ -14,3 +14,19 @@ numbers = [3, 1, 4, 1, 5, 9, 2]
 # 7 in numbers     > False
 # "3" in numbers   > False
 # numbers + [6, 5, 3] > [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+
+def modify_first_and_last(nums):
+    """Change the first element to 'ten' and the last element to 1."""
+    nums[0] = "ten"
+    nums[-1] = 1
+
+
+
+
+
+
+
+
+
+
+modify_first_and_last(numbers)
