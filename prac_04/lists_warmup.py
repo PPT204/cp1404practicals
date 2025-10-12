@@ -25,12 +25,11 @@ def print_all_except_first_two(nums):
     """Print all elements except the first two using slicing."""
     print(nums[2:])
 
-
-
-
-
-
+def check_if_nine_in_list(nums):
+    """Print whether the number 9 is in the list."""
+    print(9 in nums)
 
 
 modify_first_and_last(numbers)
 print_all_except_first_two(numbers)
+check_if_nine_in_list(numbers)
