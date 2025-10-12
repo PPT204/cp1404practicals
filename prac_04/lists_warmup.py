@@ -21,6 +21,9 @@ def modify_first_and_last(nums):
     nums[-1] = 1
 
 
+def print_all_except_first_two(nums):
+    """Print all elements except the first two using slicing."""
+    print(nums[2:])
 
 
 
@@ -30,3 +33,4 @@ def modify_first_and_last(nums):
 
 
 modify_first_and_last(numbers)
+print_all_except_first_two(numbers)
