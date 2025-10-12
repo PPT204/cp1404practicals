@@ -7,23 +7,23 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    data = load_data(FILENAME)
-    print(data)
+    """Load subject data from file and display subject details."""
+    subjects = load_data(FILENAME)
 
 
-def load_data(filename=FILENAME):
-    """Read data from file formatted like: subject,lecturer,number of students."""
-    input_file = open(filename)
-    for line in input_file:
-        print(line)  # See what a line looks like
-        print(repr(line))  # See what a line really looks like
-        line = line.strip()  # Remove the \n
-        parts = line.split(',')  # Separate the data into its parts
-        print(parts)  # See what the parts look like (notice the integer is a string)
-        parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
-        print(parts)  # See if that worked
-        print("----------")
-    input_file.close()
+def load_data(filename):
+    """
+    Read data from file formatted like: subject_code,lecturer_name,number_of_students
+    Return the data as a list of lists.
+    """
+    subjects = []
+    with open(filename, "r") as input_file:
+        for line in input_file:
+            line = line.strip()
+            parts = line.split(",")
+            parts[2] = int(parts[2])  # convert number of students to int
+            subjects.append(parts)
+    return subjects
 
 
 main()
