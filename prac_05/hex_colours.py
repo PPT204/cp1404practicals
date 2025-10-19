@@ -17,3 +17,12 @@ COLOUR_CODES = {
     "BROWN": "#A52A2A"
 }
 
+# Ask user for colour name (case-insensitive)
+colour_name = input("Enter colour name: ").strip().upper()
+
+while colour_name != "":
+    try:
+        print(f"{colour_name} is {COLOUR_CODES[colour_name]}")
+    except KeyError:
+        print("Invalid colour name")
+    colour_name = input("Enter colour name: ").strip().upper()
