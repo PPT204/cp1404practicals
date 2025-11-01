@@ -16,7 +16,8 @@ def main():
     print()
     print("These are my guitars:")
     for i, guitar in enumerate(guitars, 1):
-        print(f"Guitar {i}: {guitar}")
+        vintage_string = " (vintage)" if guitar.is_vintage() else ""
+        print(f"Guitar {i}: {guitar}{vintage_string}")
 
 
 if __name__ == "__main__":
