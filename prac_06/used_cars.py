@@ -19,5 +19,6 @@ def main():
     print(limo.fuel)
     distance_driven = limo.drive(115)
     print(distance_driven)
+    print(limo)
 
 main()
