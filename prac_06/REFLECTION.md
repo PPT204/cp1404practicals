@@ -1,8 +1,5 @@
 # CP1404 Practical Reflection
 
-Write short but thoughtful answers to each of the following.  
-Replace each `...` with your meaningful answer.
-
 ## What have you changed about your process in this subject based on your personal reflection?
 
 Mostly efficiency for the practical.
