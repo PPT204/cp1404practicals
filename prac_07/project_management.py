@@ -86,7 +86,14 @@ def save_projects(projects: List[Project], filename: str = DEFAULT_FILE) -> None
             ])
 
 def display_projects(projects: List[Project]) -> None:
-
+    incomplete = sorted([p for p in projects if not p.is_complete()])
+    complete   = sorted([p for p in projects if p.is_complete()])
+    print("Incomplete projects:")
+    for p in incomplete:
+        print(f"  {p.format_line()}")
+    print("Completed projects:")
+    for p in complete:
+        print(f"  {p.format_line()}")
 
 def filter_by_date(projects: List[Project]) -> None:
 
