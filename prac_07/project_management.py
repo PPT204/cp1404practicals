@@ -96,7 +96,15 @@ def display_projects(projects: List[Project]) -> None:
         print(f"  {p.format_line()}")
 
 def filter_by_date(projects: List[Project]) -> None:
-
+    date_str = input("Show projects that start after date (dd/mm/yy): ")
+    try:
+        after = parse_date(date_str)
+    except ValueError:
+        print("Invalid date.")
+        return
+    filtered = sorted([p for p in projects if p.start_date >= after], key=lambda p: p.start_date)
+    for p in filtered:
+        print(f"  {p.format_line()}")
 
 def add_new_project(projects: List[Project]) -> None:
 
