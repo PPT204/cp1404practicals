@@ -1,7 +1,7 @@
 """
 Project Management Program
 Estimate: 60 minutes
-Actual:
+Actual: 75 minutes
 """
 
 from __future__ import annotations
@@ -107,25 +107,33 @@ def filter_by_date(projects: List[Project]) -> None:
         print(f"  {p.format_line()}")
 
 def add_new_project(projects: List[Project]) -> None:
-
+    print("Let's add a new project")
+    name = input("Name: ").strip()
+    start_str = input("Start date (dd/mm/yy): ").strip()
+    priority = int(input("Priority: ").strip())
+    cost = float(input("Cost estimate: $").strip())
+    completion = int(input("Percent complete: ").strip())
+    projects.append(Project(priority=priority,
+                            start_date=parse_date(start_str),
+                            name=name,
+                            cost_estimate=cost,
+                            completion=completion))
 
 def update_project(projects: List[Project]) -> None:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    for i, p in enumerate(projects):
+        print(f"{i} {p.format_line()}")
+    try:
+        idx = int(input("Project choice: ").strip())
+        project = projects[idx]
+    except (ValueError, IndexError):
+        print("Invalid choice.")
+        return
+    new_completion = input("New Percentage: ").strip()
+    new_priority = input("New Priority: ").strip()
+    project.update(
+        completion=int(new_completion) if new_completion else None,
+        priority=int(new_priority) if new_priority else None
+    )
 
 
 if __name__ == "__main__":
