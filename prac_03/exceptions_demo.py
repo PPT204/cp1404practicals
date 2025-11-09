@@ -2,11 +2,11 @@
 CP1404/CP5632 - Practical
 Answer the following questions:
 1. When will a ValueError occur?
-   -> When the user enters a non-integer value (e.g., "abc", "3.5", etc.)
+   > When the user enters a non-integer value (e.g., "abc", "3.5", etc.)
 2. When will a ZeroDivisionError occur?
-   -> When the user enters 0 for the denominator.
+   > When the user enters 0 for the denominator.
 3. Could you change the code to avoid the possibility of a ZeroDivisionError?
-   -> Yes, by using a while loop to repeatedly ask for a non-zero denominator.
+   > Yes, by using a while loop to repeatedly ask for a non-zero denominator.
 """
 
 valid_input = False
