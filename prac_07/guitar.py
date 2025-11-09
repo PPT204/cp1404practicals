@@ -1,18 +1,27 @@
-from guitar import Guitar
+CURRENT_YEAR = 2022
+VINTAGE_AGE = 50
 
+class Guitar:
+    """Represent a Guitar object."""
 
-def main():
-    guitars = [
-        Guitar("Fender Stratocaster", 2014, 765.40),
-        Guitar("Gibson L-5 CES", 1922, 16035.40),
-        Guitar("Line 6 JTV-59", 2010, 1512.90),
-    ]
+    def __init__(self, name="", year=0, cost=0):
+        """Initialise a Guitar instance."""
+        self.name = name
+        self.year = year
+        self.cost = cost
 
-    print("These are my guitars:")
-    for i, guitar in enumerate(guitars, 1):
-        vintage = " (vintage)" if guitar.is_vintage() else ""
-        print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage}")
+    def __str__(self):
+        """Return a human-readable string representation of the Guitar."""
+        return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
 
+    def get_age(self):
+        """Return the age of the guitar in years."""
+        CURRENT_YEAR = 2022
+        return CURRENT_YEAR - self.year
 
-if __name__ == "__main__":
-    main()
+    def is_vintage(self):
+        """Return True if the guitar is 50 or more years old."""
+        return self.get_age() >= 50
+
+    def __lt__(self, other):
+        return self.year < other.year
