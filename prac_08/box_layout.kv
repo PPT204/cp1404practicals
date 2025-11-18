@@ -1,9 +1,30 @@
+#:kivy 2.3.0
+
 BoxLayout:
-    orientation: 'vertical'
-#    orientation: 'horizontal'
+    orientation: "vertical"
+    spacing: 8
+    padding: 12
+
+    # First button -> "Clear"
     Button:
-        text: 'one'
+        text: "Clear"
+        on_press: app.handle_clear()
+
+    # Replace the old second button with a TextInput
+    TextInput:
+        id: input_name
+        text: ""
+        hint_text: "Type your name"
+
+    # Third button -> "Greet"
     Button:
-        text: 'two'
-    Button:
-        text: 'three'
+        text: "Greet"
+        on_press: app.handle_greet()
+
+    # Label below the third button (initial text per brief)
+    Label:
+        id: output_label
+        text: "Enter your name"
+        color: 1, 1, 0, 1          # yellow
+        font_size: "24sp"
+        size_hint_y: 0.3
