@@ -28,5 +28,13 @@ class MilesKmApp(App):
         value += amount
         self.root.ids.input_miles.text = str(value)
 
+    def handle_convert(self):
+        try:
+            miles = float(self.root.ids.input_miles.text)
+        except ValueError:
+            miles = 0
+        km = miles * MILES_TO_KM
+        self.km_output = str(round(km, 5))
+
 if __name__ == "__main__":
     MilesKmApp().run()
