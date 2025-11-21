@@ -19,6 +19,14 @@ class MilesKmApp(App):
 
         km = miles * MILES_TO_KM
         self.km_output = str(round(km, 5))
-        
+
+    def handle_increment(self, amount):
+        try:
+            value = float(self.root.ids.input_miles.text)
+        except ValueError:
+            value = 0
+        value += amount
+        self.root.ids.input_miles.text = str(value)
+
 if __name__ == "__main__":
     MilesKmApp().run()
