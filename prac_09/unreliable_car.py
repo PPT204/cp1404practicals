@@ -8,3 +8,9 @@ class UnreliableCar(Car):
     def __init__(self, name: str, fuel: float, reliability: float):
         super().__init__(name, fuel)
         self.reliability = reliability
+
+    def drive(self, distance: float) -> float:
+        random_chance = random.uniform(0, 100)
+        if random_chance < self.reliability:
+            return super().drive(distance)
+        return 0
