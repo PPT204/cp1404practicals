@@ -1,0 +1,32 @@
+BoxLayout:
+    orientation: "vertical"
+    spacing: 10
+    padding: 10
+
+    # Top layout: TextInput + Up/Down buttons
+    BoxLayout:
+        orientation: "horizontal"
+        spacing: 10
+
+        TextInput:
+            id: input_miles
+            text: "0"
+            input_filter: "float"
+            multiline: False
+
+        BoxLayout:
+            orientation: "vertical"
+
+            Button:
+                text: "Up"
+            Button:
+                text: "Down"
+
+    Button:
+        text: "Convert miles to km"
+
+    Label:
+        id: output_km
+        text: "0.0"
+        font_size: 40
+        color: (1, 1, 0, 1)
