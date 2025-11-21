@@ -62,7 +62,19 @@ def choose_taxi(taxis):
         return None
 
 def drive_taxi(taxi):
+    """Ask distance, drive taxi, return trip cost."""
+    try:
+        distance = float(input("Drive how far? "))
+    except ValueError:
+        print("Invalid distance")
+        return 0
 
+    taxi.start_fare()
+    taxi.drive(distance)
+
+    trip_cost = taxi.get_fare()
+    print(f"Your {taxi.name} trip cost you ${trip_cost:.2f}")
+    return trip_cost
 
 
 main()
